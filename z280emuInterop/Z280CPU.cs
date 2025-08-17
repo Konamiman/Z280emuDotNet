@@ -46,9 +46,19 @@ public struct Z280CPU : IDisposable
         set => Marshal.StructureToPtr(value, m_token, false);
     }
 
+    /// <summary>
+    /// Create a new instance of the Z280 CPU struct.
+    /// </summary>
+    /// <param name="ram">Address space to use as RAM.</param>
+    /// <param name="io">Address space to use as I/O.</param>
+    /// <returns></returns>
     public static Z280CPU Create(AddressSpace ram, AddressSpace io) => Z280emuInterop.CreateZ280(ram, io);
 
     private bool disposed = false;
+
+    /// <summary>
+    /// Free the unmanaged memory used by this Z280 CPU struct instance.
+    /// </summary>
     public void Dispose()
     {
         if(!disposed) {
@@ -57,8 +67,14 @@ public struct Z280CPU : IDisposable
         }
     }
 
+    /// <summary>
+    /// Execute the instruction pointed by the PC register.
+    /// </summary>
     public void ExecuteInstruction() => Z280emuInterop.execute_z280(ref this);
 
+    /// <summary>
+    /// Reset the CPU state to its initial values.
+    /// </summary>
     public void Reset() => Z280emuInterop.reset_z280(ref this);
 
     public ushort AF

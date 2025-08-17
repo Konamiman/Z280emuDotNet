@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\z280emu_dll\bin\z280emu_dll.dll" Link="z280emu_dll.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="Nestor80" Version="1.3.5" />
     <PackageReference Include="NUnit" Version="4.4.0" />
@@ -16,12 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\z280emuInterop\Z280emuInterop.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="z280emu_dll.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
