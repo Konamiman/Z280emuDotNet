@@ -5,9 +5,9 @@ VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z280Emulator", "Z280Emulator\Z280Emulator.csproj", "{55CC874B-DC7A-4202-B214-D9613DEB8E4D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "z280emudll", "z280emudll\z280emudll.vcxproj", "{BC7EB800-4EC1-47A0-9E3F-1C2D5E9BB691}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "z280emu", "z280emudll\z280emudll.vcxproj", "{BC7EB800-4EC1-47A0-9E3F-1C2D5E9BB691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "z280emuFacade", "z280emuFacade\z280emuFacade.csproj", "{790225EC-817F-4D3D-A441-824A4B72E5F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z280emuInterop", "z280emuFacade\Z280emuInterop.csproj", "{790225EC-817F-4D3D-A441-824A4B72E5F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{2CFE6EC8-D3C0-40A6-BDFE-8B2AFBBCE5FD}"
 EndProject

@@ -1,13 +1,13 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Konamiman.Z280dotNet.Facade;
+namespace Konamiman.Z280emuDotNet;
 
-internal class Z280Interop
+internal class Z280emuInterop
 {
-    const string DLL_NAME = "z280emudll.dll";
+    const string DLL_NAME = "z280emu.dll";
 
     [DllImport(DLL_NAME, CallingConvention = CallingConvention.Cdecl)]
-    public static extern IntPtr create_z280(IntPtr ram, IntPtr iospace);
+    public static extern nint create_z280(nint ram, nint iospace);
 
     [DllImport(DLL_NAME, CallingConvention = CallingConvention.Cdecl)]
     public static extern void reset_z280(ref Z280CPU device);
@@ -33,17 +33,17 @@ internal class Z280Interop
 
     public static void FreeZ280(Z280CPU device)
     {
-        if(device.ram != IntPtr.Zero) {
+        if(device.ram != nint.Zero) {
             Marshal.FreeHGlobal(device.ram);
-            device.ram = IntPtr.Zero;
+            device.ram = nint.Zero;
         }
-        if(device.iospace != IntPtr.Zero) {
+        if(device.iospace != nint.Zero) {
             Marshal.FreeHGlobal(device.iospace);
-            device.iospace = IntPtr.Zero;
+            device.iospace = nint.Zero;
         }
-        if(device.self != IntPtr.Zero) {
+        if(device.self != nint.Zero) {
             Marshal.FreeHGlobal(device.self);
-            device.self = IntPtr.Zero;
+            device.self = nint.Zero;
         }
     }
 

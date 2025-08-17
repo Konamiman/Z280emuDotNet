@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
-namespace Konamiman.Z280dotNet.Facade;
+namespace Konamiman.Z280emuDotNet;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct Z80DaisyInterface
 {
     // Delegate declarations
-    public delegate int Z80DaisyIrqStateCallback(IntPtr device);
-    public delegate int Z80DaisyIrqAckCallback(IntPtr device);
-    public delegate void Z80DaisyIrqRetiCallback(IntPtr device);
+    public delegate int Z80DaisyIrqStateCallback(nint device);
+    public delegate int Z80DaisyIrqAckCallback(nint device);
+    public delegate void Z80DaisyIrqRetiCallback(nint device);
 
     // Pointer to device (z280_device)
-    public IntPtr m_device; // chained device (eg.85230)
+    public nint m_device; // chained device (eg.85230)
 
     // Pointer to next device in the chain
-    public IntPtr m_daisy_next; // next device in the chain
+    public nint m_daisy_next; // next device in the chain
 
     // Function pointer callbacks with MarshalAs
     [MarshalAs(UnmanagedType.FunctionPtr)]

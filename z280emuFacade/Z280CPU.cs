@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Konamiman.Z280dotNet.Facade;
+namespace Konamiman.Z280emuDotNet;
 
 /// <summary>
 /// Z280 CPU main struct.
@@ -14,22 +14,22 @@ public struct Z280CPU : IDisposable
 
     #region Fields matching the C structure, must be in the same order as in the C code
 
-    internal IntPtr m_tag;
+    internal nint m_tag;
     internal uint m_type;
     internal uint m_clock;
-    internal IntPtr m_token; // Pointer to the Z280State structure
-    internal IntPtr z280uart_tag;
-    internal IntPtr z280uart;
-    internal IntPtr bti_init_cb;
+    internal nint m_token; // Pointer to the Z280State structure
+    internal nint z280uart_tag;
+    internal nint z280uart;
+    internal nint bti_init_cb;
     internal int m_bus16; /* OPT pin */
     internal uint m_ctin0, m_ctin1, m_ctin2;
     internal ushort ctin1_brg_const, ctin1_uart_timer;
 
     #endregion
 
-    internal IntPtr ram;
-    internal IntPtr iospace;
-    internal IntPtr self;
+    internal nint ram;
+    internal nint iospace;
+    internal nint self;
 
     /// <summary>
     /// Reference to the state structure. In general it's not recommended to access this directly,
@@ -44,20 +44,20 @@ public struct Z280CPU : IDisposable
         set => Marshal.StructureToPtr(value, m_token, false);
     }
 
-    public static Z280CPU Create(AddressSpace ram, AddressSpace io) => Z280Interop.CreateZ280(ram, io);
+    public static Z280CPU Create(AddressSpace ram, AddressSpace io) => Z280emuInterop.CreateZ280(ram, io);
 
     private bool disposed = false;
     public void Dispose()
     {
         if(!disposed) {
-            Z280Interop.FreeZ280(this);
+            Z280emuInterop.FreeZ280(this);
             disposed = true;
         }
     }
 
-    public void ExecuteInstruction() => Z280Interop.execute_z280(ref this);
+    public void ExecuteInstruction() => Z280emuInterop.execute_z280(ref this);
 
-    public void Reset() => Z280Interop.reset_z280(ref this);
+    public void Reset() => Z280emuInterop.reset_z280(ref this);
 
     public ushort AF
     {

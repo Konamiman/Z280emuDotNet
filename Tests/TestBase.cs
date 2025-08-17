@@ -1,5 +1,5 @@
 ﻿using Konamiman.Nestor80.Assembler;
-using Konamiman.Z280dotNet.Facade;
+using Konamiman.Z280emuDotNet;
 using NUnit.Framework;
 
 namespace Konamiman.Z280dotNet.Tests;

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Konamiman.Z280dotNet.Facade
+namespace Konamiman.Z280emuDotNet
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct Z280State
@@ -75,16 +75,16 @@ namespace Konamiman.Z280dotNet.Facade
         public uint ea;
         public int eapdr;
         public ushort timer_cnt;
-        public IntPtr daisy;
-        public IntPtr irq_callback;
-        public IntPtr device;
-        public IntPtr ram;
-        public IntPtr iospace;
+        public nint daisy;
+        public nint irq_callback;
+        public nint device;
+        public nint ram;
+        public nint iospace;
         public int icount;
         public int extra_cycles;
 
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8 * POINTER_SIZE)]
-        public IntPtr[] cc;
+        public nint[] cc;
 
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)]
         public byte[] abort_handler;

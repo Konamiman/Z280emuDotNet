@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Konamiman.Z280dotNet.Facade;
+namespace Konamiman.Z280emuDotNet;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct AddressSpace
