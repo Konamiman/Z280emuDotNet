@@ -1,7 +1,7 @@
 # Z280emuDotNet
 
 This is a quick and dirty [.NET interop](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/) wrapper
-around [the z280emu project](https://github.com/mtdev79/z280emu). The goal is to be be able to unit test Z280 code using
+around [the z280emu project](https://github.com/mtdev79/z280emu). The goal is to be be able to unit test [Z280](https://github.com/konamiman/Z280TechnicalManual/) code using
 .NET tools like [NUnit](https://nunit.org/).
 
 This repository consists of the following projects, all contained in a Visual Studio solution:
