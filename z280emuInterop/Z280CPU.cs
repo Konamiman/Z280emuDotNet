@@ -3,7 +3,9 @@
 namespace Konamiman.Z280emuDotNet;
 
 /// <summary>
-/// Z280 CPU main struct.
+/// Z280 CPU main struct. Client code should create an instance of this struct using the Create method
+/// and interact with its public members. The only other classes/structs that should be used outside of this assembly
+/// are AddressSpace and its wrapper classes.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 public struct Z280CPU : IDisposable

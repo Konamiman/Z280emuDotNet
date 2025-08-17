@@ -10,31 +10,16 @@ public abstract class TestBase
 
     protected static Z280CPU z280;
 
-    protected static byte[] ram = new byte[16 * 1024 * 1024];
-    protected static byte[] io = new byte[16 * 1024 * 1024];
+    private static PlainMemoryAddressSpaceWrapper ramSpaceWrapper = new();
+    protected static byte[] ram = ramSpaceWrapper.Contents;
 
-    protected static AddressSpace ramSpace = new() {
-        read_byte = (address) => ram[address],
-        read_word = (address) => (ushort)(ram[address] + ram[address + 1] >> 8),
-        write_byte = (address, data) => { ram[address] = data; },
-        write_word = (address, data) => { ram[address] = (byte)(data & 0xFF); ram[address + 1] = (byte)(data >> 8); },
-        read_raw_byte = (address) => ram[address],
-        read_raw_word = (address) => (ushort)(ram[address] + (ram[address + 1] << 8))
-    };
-
-    protected static AddressSpace ioSpace = new() {
-        read_byte = (address) => io[address],
-        read_word = (address) => (ushort)(io[address] + io[address + 1] >> 8),
-        write_byte = (address, data) => { io[address] = data; },
-        write_word = (address, data) => { io[address] = (byte)(data & 0xFF); io[address + 1] = (byte)(data >> 8); },
-        read_raw_byte = (address) => io[address],
-        read_raw_word = (address) => (ushort)(io[address] + (io[address + 1] << 8))
-    };
+    private static PlainMemoryAddressSpaceWrapper ioSpaceWrapper = new();
+    protected static byte[] io = ioSpaceWrapper.Contents;
 
     [OneTimeSetUp]
     public static void SetUpFixture()
     {
-        z280 = Z280CPU.Create(ramSpace, ioSpace);
+        z280 = Z280CPU.Create(ramSpaceWrapper.AddressSpace, ioSpaceWrapper.AddressSpace);
     }
 
     [OneTimeTearDown]
