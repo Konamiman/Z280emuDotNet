@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z280Emulator", "Z280Emulator\Z280Emulator.csproj", "{55CC874B-DC7A-4202-B214-D9613DEB8E4D}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "z280emu_dll", "z280emu_dll\z280emu_dll.vcxproj", "{BC7EB800-4EC1-47A0-9E3F-1C2D5E9BB691}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z280emuInterop", "z280emuInterop\Z280emuInterop.csproj", "{790225EC-817F-4D3D-A441-824A4B72E5F8}"
@@ -21,18 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Debug|x64.Build.0 = Debug|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Debug|x86.Build.0 = Debug|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Release|x64.ActiveCfg = Release|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Release|x64.Build.0 = Release|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Release|x86.ActiveCfg = Release|Any CPU
-		{55CC874B-DC7A-4202-B214-D9613DEB8E4D}.Release|x86.Build.0 = Release|Any CPU
 		{BC7EB800-4EC1-47A0-9E3F-1C2D5E9BB691}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{BC7EB800-4EC1-47A0-9E3F-1C2D5E9BB691}.Debug|Any CPU.Build.0 = Debug|x64
 		{BC7EB800-4EC1-47A0-9E3F-1C2D5E9BB691}.Debug|x64.ActiveCfg = Debug|x64
