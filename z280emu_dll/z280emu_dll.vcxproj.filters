@@ -21,29 +21,29 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280\z80common.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\sconsole.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280\z80daisy.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280dbg.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280\z280.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280\z280ops.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280ops.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280\z280tbl.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280tbl.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280\z280uart.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280uart.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\z280dbg.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z80common.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\z280emu\sconsole.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z80daisy.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,43 +53,43 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z80daisy.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280cb.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280dasm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280dd.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280dded.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280ed.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280fd.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280fded.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280op.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280uart.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280xy.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="entry_points.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280cb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280dasm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280dd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280dded.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280ed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280fd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280fded.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280op.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280uart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280xy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z80daisy.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

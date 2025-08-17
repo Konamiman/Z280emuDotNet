@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\z280emuFacade\Z280emuInterop.csproj" />
+    <ProjectReference Include="..\z280emuInterop\Z280emuInterop.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="z280emu.dll">
+    <None Update="z280emu_dll.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

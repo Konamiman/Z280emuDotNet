@@ -1,5 +1,5 @@
-#include "../z280emu/z280/z80common.h"
-#include "../z280emu/z280/z280.h"
+#include "../z280emu_repo_submodule/z280/z80common.h"
+#include "../z280emu_repo_submodule/z280/z280.h"
 
 #define XTALCLK 29491200
 

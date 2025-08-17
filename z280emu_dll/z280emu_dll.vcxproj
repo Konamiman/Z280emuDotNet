@@ -24,7 +24,7 @@
     <ProjectGuid>{bc7eb800-4ec1-47a0-9e3f-1c2d5e9bb691}</ProjectGuid>
     <RootNamespace>z280emudll</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>z280emu</ProjectName>
+    <ProjectName>z280emu_dll</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,48 +139,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\z280emu\sconsole.h" />
-    <ClInclude Include="..\z280emu\z280dbg.h" />
-    <ClInclude Include="..\z280emu\z280\z280.h" />
-    <ClInclude Include="..\z280emu\z280\z280ops.h" />
-    <ClInclude Include="..\z280emu\z280\z280tbl.h" />
-    <ClInclude Include="..\z280emu\z280\z280uart.h" />
-    <ClInclude Include="..\z280emu\z280\z80common.h" />
-    <ClInclude Include="..\z280emu\z280\z80daisy.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\sconsole.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280dbg.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280ops.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280tbl.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z280uart.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z80common.h" />
+    <ClInclude Include="..\z280emu_repo_submodule\z280\z80daisy.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\z280emu\z280\z280.c" />
-    <ClCompile Include="..\z280emu\z280\z280cb.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280.c" />
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280cb.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280dasm.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280dasm.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280dd.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280dd.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280dded.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280dded.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280ed.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280ed.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280fd.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280fd.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280fded.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280fded.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280op.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280op.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z280uart.c" />
-    <ClCompile Include="..\z280emu\z280\z280xy.c">
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280uart.c" />
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z280xy.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\z280emu\z280\z80daisy.c" />
+    <ClCompile Include="..\z280emu_repo_submodule\z280\z80daisy.c" />
     <ClCompile Include="entry_points.c" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="pch.cpp">
