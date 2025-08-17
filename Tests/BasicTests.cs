@@ -153,6 +153,18 @@ namespace Konamiman.Z280dotNet.Tests
             Assert.That(z280.IX, Is.EqualTo(2));
             Assert.That(z280.IY, Is.EqualTo(1));
         }
+
+        [Test]
+        public void HaltedStateCanBeChecked()
+        {
+            z280.Reset();
+            Assert.That(z280.Halted, Is.False);
+
+            AssembleAndLoad("halt");
+            z280.ExecuteInstruction();
+
+            Assert.That(z280.Halted, Is.True);
+        }
     }
 }
 
