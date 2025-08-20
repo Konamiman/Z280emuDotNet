@@ -6,7 +6,7 @@ namespace Konamiman.Z280dotNet.Tests;
 
 public abstract class TestBase
 {
-    protected const int DEFAULT_INITIAL_SSP = 0xFFFD;
+    protected const int DEFAULT_INITIAL_SP = 0xFFFD;
 
     protected static Z280CPU z280;
 
@@ -44,23 +44,25 @@ public abstract class TestBase
         return address + size - 1;
     }
 
-    protected static void Run(int address = 0, int initialSSP = DEFAULT_INITIAL_SSP, bool reset = true)
+    protected static void Run(int address = 0, int initialSP = DEFAULT_INITIAL_SP, bool reset = true)
     {
         if(reset)
             z280.Reset();
 
-        if(initialSSP != -1)
-            z280.SSP = (ushort)initialSSP;
+        if(initialSP != -1) {
+            z280.SSP = (ushort)initialSP;
+            z280.USP = (ushort)initialSP;
+        }
 
         if(address != 0)
             z280.PC = (ushort)address;
 
-        while(z280.SSP <= initialSSP) {
+        while(z280.ActiveSP <= initialSP) {
             z280.ExecuteInstruction();
         }
     }
 
-    protected static void AssembleAndRun(string code, int address = 0, int initialSSP = DEFAULT_INITIAL_SSP, bool reset = true)
+    protected static void AssembleAndRun(string code, int address = 0, int initialSSP = DEFAULT_INITIAL_SP, bool reset = true)
     {
         AssembleAndLoad(code, address);
         Run(address, initialSSP, reset);

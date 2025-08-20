@@ -84,4 +84,6 @@ public partial struct Z280CPU : IDisposable
     public byte IntMode => State.IM;
 
     public bool Halted => State.HALT != 0;
+
+    public bool InUserMode => (MSR & 0x4000) != 0;
 }

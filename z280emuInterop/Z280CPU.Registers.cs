@@ -234,6 +234,20 @@ public partial struct Z280CPU
         }
     }
 
+    public ushort ActiveSP
+    {
+        get => InUserMode ? USP : SSP;
+        set
+        {
+            var z280State = State;
+            if (InUserMode)
+                z280State.USP.UInt16low = value;
+            else
+                z280State.SSP.UInt16low = value;
+            State = z280State;
+        }
+    }
+
     public byte R
     {
         get => State.R;
@@ -386,6 +400,18 @@ public partial struct Z280CPU
         {
             var z280State = State;
             z280State.I = value;
+            State = z280State;
+        }
+    }
+
+    public ushort MSR
+    {
+        get => (ushort)(State.cr[0] + (State.cr[1] << 8));
+        set
+        {
+            var z280State = State;
+            z280State.cr[0] = (byte)(value & 0xFF);
+            z280State.cr[1] = (byte)(value >> 8);
             State = z280State;
         }
     }

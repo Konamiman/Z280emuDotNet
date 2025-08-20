@@ -53,7 +53,7 @@ namespace Konamiman.Z280dotNet.Tests
             Assert.That(z280.I, Is.EqualTo(0x66));
 
             Assert.That(z280.PC, Is.EqualTo(lastAddress));
-            Assert.That(z280.SSP, Is.EqualTo(DEFAULT_INITIAL_SSP + 2));
+            Assert.That(z280.SSP, Is.EqualTo(DEFAULT_INITIAL_SP + 2));
             Assert.That(z280.USP, Is.EqualTo(0x7788));
 
             Assert.That(z280.A, Is.EqualTo(0x12));
@@ -164,6 +164,32 @@ namespace Konamiman.Z280dotNet.Tests
             z280.ExecuteInstruction();
 
             Assert.That(z280.Halted, Is.True);
+        }
+
+        [Test]
+        public void MsrSetInCodeCanBeReadInStatus()
+        {
+            AssembleAndRun(@"
+                ld c,0
+                ldctl hl,(c)
+                set 6,h ;User mode
+                set 4,h ;Breakpoint on HALT
+                set 2,l ;Enable interrupt request 2
+                set 0,l ;Enable interrupt request 0
+                ldctl (c),hl
+                ret
+            ");
+
+            Assert.That(z280.MSR, Is.EqualTo(0x5005));
+        }
+
+        [Test]
+        public void MsrSetProgrammaticallyCanBeReadInCode()
+        {
+            z280.Reset();
+            z280.MSR = 0x1005; //This time we can't set the user mode bit because LDCTL wouldn't work
+            AssembleAndRun("ld c,0 | ldctl hl,(c) | ret", reset: false);
+            Assert.That(z280.HL, Is.EqualTo(0x1005));
         }
     }
 }
